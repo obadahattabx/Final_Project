@@ -59,5 +59,10 @@
         android:name="edu.birzeit.projectpart1.ui.ProfileTenant.ProfileTenantFragment"
         android:label="Tenant Profile"
         tools:layout="@layout/fragment_profile_tenent" />
+    <fragment
+        android:id="@+id/nav_profile_agency"
+        android:name="edu.birzeit.projectpart1.ui.ProfileAgency.ProfileAgencyFragment"
+        android:label="fragment_profile_agency"
+        tools:layout="@layout/fragment_profile_agency" />
 
 </navigation>
