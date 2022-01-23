@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background_profile"
+    tools:context=".ui.ProfileTenant.ProfileTenantFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/water1"
+
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="150dp"
+                    android:layout_height="141dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="20sp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/nav_header_desc"
+                    android:paddingTop="@dimen/nav_header_vertical_spacing"
+                    app:srcCompat="@drawable/profile1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="20sp"
+                    android:layout_marginTop="30sp"
+                    android:layout_marginBottom="10sp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="First Name"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="Last Name"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="Email"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="Password"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="Gender"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="City"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="Phone Number"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="Nationality"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="MonthlySalary"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="Occupation"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="CurentCountry"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="FamilySize"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20sp"
+                    android:layout_marginTop="30sp"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/firstname_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="First Name"
+                        android:paddingLeft="6dp"
+                        android:textColor="#353b48"
+                        android:textSize="18sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/lastname_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="Last Name"
+                        android:paddingLeft="6dp"
+                        android:textColor="#353b48"
+                        android:textSize="18sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/email_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="Email"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/password_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="Password"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/gender_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="Gender"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/city_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="City"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/phone_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="PhoneNumber"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/nationality_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="Nationality"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/salary_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="Salary"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/occupation_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="Occupation"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/currentcountry_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="CurrentCountry"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/familysize_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:text="FamilySize"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:paddingLeft="6dp"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <Button
+                android:id="@+id/submit_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20sp"
+                android:backgroundTint="#B9454343"
+                android:paddingVertical="20sp"
+                android:text="UPDATE"
+                android:textColor="#F5F6FA" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
