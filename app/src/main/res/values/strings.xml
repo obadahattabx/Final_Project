@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">PROJECTpart1</string>
+    <string-array name="country_array">
+        <item>Ramallah</item>
+        <item>jerusalem</item>
+        <item>bethlehem</item>
+        <item>Aleppo</item>
+        <item>Damascus</item>
+        <item>Idlib</item>
+        <item>Tripoli</item>
+        <item>Bayda</item>
+    </string-array>
+
+    <string-array name="country_array1">
+        <item>palestine</item>
+        <item>jordan</item>
+        <item>Algeria</item>
+        <item>Syria</item>
+    </string-array>
+
+    <string-array name="Nationalitytype">
+        <item>palestinian</item>
+        <item>jordanian</item>
+        <item>Egyption</item>
+        <item>Algerian</item>
+        <item>Syrian</item>
+        <item>Iraqian</item>
+    </string-array>
+    <string-array name="Gendertype">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+    <string-array name="status">
+        <item>furnished </item>
+        <item>unfurnished</item>
+    </string-array>
+
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_postproperty">Postperporty</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

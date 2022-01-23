@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="edu.birzeit.projectpart1.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="edu.birzeit.projectpart1.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="edu.birzeit.projectpart1.ui.details.detailsFragment"
+        android:label="Details of property"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="contentDetails"
+            app:argType="string"
+            android:defaultValue="hjk" />
+        <argument
+            android:name="details"
+            app:argType="edu.birzeit.projectpart1.Properties"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_postproperty"
+        android:name="edu.birzeit.projectpart1.ui.Postproperty.PostFragment"
+        android:label="@string/menu_postproperty" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="edu.birzeit.projectpart1.ui.details.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
+</navigation>

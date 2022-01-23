@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="@drawable/background_design"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:paddingTop="130dp"
+    tools:context=".Login"
+    tools:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/top_design">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:text="Login Page"
+            android:textAlignment="center"
+            android:textColor="#ffff"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/email_login"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:ems="10"
+                android:hint="E-mail"
+                android:inputType="textPersonName"
+                android:paddingVertical="10sp"
+                android:textColor="#FFFF"
+                android:textColorHint="#FFFF" />
+
+            <EditText
+                android:id="@+id/password_login"
+                android:layout_width="match_parent"
+                android:layout_height="57dp"
+                android:layout_marginVertical="10sp"
+                android:ems="10"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:paddingVertical="10sp"
+                android:textColor="#FFFF"
+                android:textColorHint="#FFFF" />
+
+            <CheckBox
+                android:id="@+id/remember"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Remember Me"
+                android:textColor="#FFFF" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10sp"
+                android:background="@drawable/button_design"
+                android:paddingVertical="10sp"
+                android:text="Log in"
+                android:textColor="#F5F6FA" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:id="@+id/email_side"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10sp"
+                android:text="Don't have an account?"
+                android:textAlignment="center"
+                android:textColor="#B93F8D97"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/agency"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10sp"
+                    android:background="@drawable/button_design"
+                    android:paddingVertical="10sp"
+                    android:shadowColor="#B93F8D97"
+                    android:text="Sign up as Renting Agency"
+                    android:textColor="#DCFFFFFF" />
+
+                <Button
+                    android:id="@+id/tenant"
+                    style="@style/Widget.AppCompat.Button"
+                    android:layout_width="187dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginVertical="10sp"
+                    android:background="@drawable/button_design"
+                    android:paddingVertical="10sp"
+                    android:shadowColor="#B93F8D97"
+                    android:text="Sign up as Tenant"
+                    android:textColor="#DCFFFFFF" />
+            </LinearLayout>
+
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="10sp"
+                android:text="Don't need account?"
+                android:textAlignment="center"
+                android:textColor="#B93F8D97"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/gest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_design"
+                android:text="Login as Gest" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
