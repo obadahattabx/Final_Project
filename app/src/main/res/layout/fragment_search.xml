@@ -251,7 +251,7 @@
                     android:textSize="20sp" />
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/search_spinner"
                     android:layout_width="203dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="52dp"
@@ -296,7 +296,7 @@
                 android:layout_height="15dp" />
 
             <ImageButton
-                android:id="@+id/post_picture_button"
+                android:id="@+id/search_picture_button"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
                 android:layout_marginLeft="50dp"

@@ -2,11 +2,18 @@ package edu.birzeit.projectpart1.ui.search;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EdgeEffect;
+import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Spinner;
 
 import edu.birzeit.projectpart1.R;
 
@@ -16,6 +23,19 @@ import edu.birzeit.projectpart1.R;
  * create an instance of this fragment.
  */
 public class SearchFragment extends Fragment {
+    EditText city;
+    EditText min_area;
+    EditText max_area;
+    EditText min_bedroom;
+    EditText max_bedroom;
+    EditText price;
+    Spinner status;
+    CheckBox garden;
+    CheckBox balcony;
+    ImageButton btn_search;
+
+
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,5 +82,24 @@ public class SearchFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_search, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        city=getActivity().findViewById(R.id.search_city);
+        min_area=getActivity().findViewById(R.id.search_min_area);
+        max_area=getActivity().findViewById(R.id.search_max_area);
+        min_bedroom=getActivity().findViewById(R.id.search_min_bedroom);
+        max_bedroom=getActivity().findViewById(R.id.search_max_bebroom);
+        price=getActivity().findViewById(R.id.search_price);
+        status=getActivity().findViewById(R.id.search_spinner);
+        garden=getActivity().findViewById(R.id.search_garden);
+        balcony=getActivity().findViewById(R.id.search_balcony);
+        btn_search=getActivity().findViewById(R.id.search_picture_button);
+
+
+
+
     }
 }

@@ -40,7 +40,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         db.execSQL("drop Table if exists User");
         db.execSQL("drop Table if exists UserRentingAgency");
        db.execSQL("drop Table if exists UserTenant");
-        db.execSQL("drop Table if exists Property");
+         db.execSQL("drop Table if exists Property");
 
     }
      public void addUserRentingAgency(UserRentingAgency UR){
