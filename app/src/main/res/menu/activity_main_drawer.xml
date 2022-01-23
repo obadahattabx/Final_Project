@@ -6,21 +6,54 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_baseline_list_alt_24"
+            android:icon="@drawable/ic_home"
             android:title="@string/menu_home" />
+
         <item android:id="@+id/nav_search"
             android:icon="@drawable/ic_search"
             android:title="Property search"
             />
+
         <item
 
             android:id="@+id/nav_postproperty"
             android:icon="@drawable/ic_post"
             android:title="Post"
             android:visible="true"/>
+        <item android:id="@+id/nav_edit"
+            android:icon="@drawable/ic_edit"
+            android:title=" Edit the list of properties"
+            />
+
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_historyTenant"
+            android:icon="@drawable/ic_post"
+            android:title=" Rental history of the tenant"
+            />
+
+        <item android:id="@+id/nav_historyAgency"
+            android:icon="@drawable/ic_post"
+            android:title="  Rental history agency,"
+            />
+
+        <item android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_post"
+            android:title="Rental Application Menu"
+            />
+
+        <item android:id="@+id/nav_profile_agency"
+            android:icon="@drawable/ic_profile"
+            android:title="Profile"
+            />
+
+        <item android:id="@+id/nav_profile_tenent"
+            android:icon="@drawable/ic_profile"
+            android:title="Profile"
+            />
+
+        <item android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="Logout"
+            />
     </group>
 </menu>
