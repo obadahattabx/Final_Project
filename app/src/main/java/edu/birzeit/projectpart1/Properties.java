@@ -5,6 +5,10 @@ import android.os.Parcelable;
 
 public class Properties implements Parcelable {
     private int ID;
+    private int ID_tenant;
+    private int ID_agancy;
+    private String  garden;
+    private String  balcony;
     private String cityName;
     private String address;
     private String surfaceArea;
@@ -15,6 +19,7 @@ public class Properties implements Parcelable {
     private String status;
     private String creatDate;
     private String description;
+    private String valid;
     private byte[] image;
 
     public  Properties(){
@@ -34,6 +39,12 @@ public class Properties implements Parcelable {
         creatDate = in.readString();
         description = in.readString();
         image = in.createByteArray();
+        ID_tenant=in.readInt();
+        ID_agancy=in.readInt();
+        garden=in.readString();
+        balcony=in.readString();
+        valid=in.readString();
+
     }
 
     public static final Creator<Properties> CREATOR = new Creator<Properties>() {
@@ -48,7 +59,45 @@ public class Properties implements Parcelable {
         }
     };
 
+    public String getValid() {
+        return valid;
+    }
 
+    public void setValid(String valid) {
+        this.valid = valid;
+    }
+
+    public int getID_tenant() {
+        return ID_tenant;
+    }
+
+    public void setID_tenant(int ID_tenant) {
+        this.ID_tenant = ID_tenant;
+    }
+
+    public int getID_agancy() {
+        return ID_agancy;
+    }
+
+    public void setID_agancy(int ID_agancy) {
+        this.ID_agancy = ID_agancy;
+    }
+
+    public String getGarden() {
+        return garden;
+    }
+
+    public void setGarden(String garden) {
+        this.garden = garden;
+    }
+
+    public String getBalcony() {
+        return balcony;
+    }
+
+    public void setBalcony(String balcony) {
+        this.balcony = balcony;
+    }
 
     public String getDescription() {
         return description;
@@ -154,6 +203,8 @@ public class Properties implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeInt(ID);
+        parcel.writeInt(ID_agancy);
+        parcel.writeInt(ID_tenant);
         parcel.writeString(cityName);
         parcel.writeString(address);
         parcel.writeString(surfaceArea);
@@ -165,5 +216,11 @@ public class Properties implements Parcelable {
         parcel.writeString(creatDate);
         parcel.writeString(description);
         parcel.writeByteArray(image);
+        parcel.writeString(balcony);
+        parcel.writeString(garden);
+        parcel.writeString(valid);
+
+
     }
+
 }

@@ -8,19 +8,24 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import java.io.ByteArrayOutputStream;
@@ -60,6 +65,9 @@ public class PostFragment extends Fragment {
     ImageButton addPicture;
     Button Post;
     String ContentSpinerStatus;
+    CheckBox garden;
+    CheckBox balcony;
+    String balcony_status="false",garden_status="false";
     byte [] imageButton;
 
 
@@ -126,12 +134,31 @@ public class PostFragment extends Fragment {
         numBedroom=getActivity().findViewById(R.id.post_bedroom);
         status=getActivity().findViewById(R.id.post_status);
         description=getActivity().findViewById(R.id.post_discription);
+        garden=getActivity().findViewById(R.id.post_garden);
+        balcony=getActivity().findViewById(R.id.post_balcony);
+
+        balcony.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                balcony_status=String.valueOf(b);
+
+
+            }
+        });
+        garden.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                garden_status=String.valueOf(b);
+
+
+            }
+        });
         Calendar calendar=Calendar.getInstance();
         final int year=calendar.get(Calendar.YEAR);
         final int month=calendar.get(Calendar.MONTH);
         final int day =calendar.get(Calendar.DAY_OF_MONTH);
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(getActivity(),"Home4.db",null,1);
+                DataBaseHelper(getActivity(),"home5.db",null,1);
 
 
 
@@ -194,12 +221,18 @@ public class PostFragment extends Fragment {
                 p.setNumOfBedroom(numBedroom.getText().toString());
                 p.setStatus(ContentSpinerStatus);
                 p.setImage(imageButton);
+                p.setDescription(description.getText().toString());
+                p.setGarden(garden_status);
+                p.setBalcony(balcony_status);
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
                 LocalDateTime now = LocalDateTime.now();
                 System.out.println(dtf.format(now));
                 p.setCreatDate(dtf.format(now));
                // hereee discrption;
                 dataBaseHelper.insertPostProperty(p);
+                NavController navController= Navigation.findNavController(getView());
+                @NonNull NavDirections action=PostFragmentDirections.actionNavPostpropertyToNavEdit();
+                navController.navigate(action);
 
 
 

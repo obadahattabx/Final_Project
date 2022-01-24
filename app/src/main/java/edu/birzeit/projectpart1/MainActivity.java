@@ -19,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     Button buttongetstart;
     private static final String TOAST_connected = "Succefull connected ";
     private static final String TOAST_Notconnected = "Faild connection ";
+    public static int id_user_login;
+    public static String type_user;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,5 +58,6 @@ public class MainActivity extends AppCompatActivity {
         else
             return false;
     }
+
 
 }

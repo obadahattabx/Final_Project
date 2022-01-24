@@ -40,8 +40,12 @@ public class HomeFragment extends Fragment {
     public void onResume() {
         super.onResume();
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(getActivity(),"Home4.db",null,1);
+                DataBaseHelper(getActivity(),"home5.db",null,1);
         propertylist=getActivity().findViewById(R.id.propertylist);
+
+
+
+       // ArrayList<Properties> ap=dataBaseHelper.getProperties_Search("tulakrm","45",null,null,null,null,null,null,null);
         ArrayList<Properties> ap=dataBaseHelper.getAllProperties();
         PropertiesAdapter pd=new PropertiesAdapter(getActivity(),R.layout.view_property,ap);
         propertylist.setAdapter(pd);

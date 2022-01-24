@@ -163,7 +163,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Agency Name"
+                        android:hint="Agency Name"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -179,7 +179,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Email"
+                        android:hint="Email"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -199,6 +199,7 @@
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
+
                         />
 
                     <Space
@@ -210,7 +211,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Country"
+                        android:hint="Country"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -241,7 +242,7 @@
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
                         android:inputType="phone"
-                        android:text="Phone Number"
+                        android:hint="Phone Number"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"

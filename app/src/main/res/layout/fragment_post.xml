@@ -294,7 +294,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="61dp"
                             android:ems="10"
-                            android:inputType="date" />
+                            android:inputType="date"
+                            android:enabled="false"/>
 
                     </LinearLayout>
 
@@ -326,12 +327,12 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="701dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:orientation="vertical">
@@ -355,13 +356,30 @@
                             android:src="@drawable/addpicture"
                             android:textAlignment="center" />
 
-                    </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical" />
+                            <CheckBox
+                                android:id="@+id/post_garden"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Garden"
+                                android:textColor="@color/white"/>
+
+                            <CheckBox
+                                android:id="@+id/post_balcony"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Balcony"
+                                android:textColor="@color/white"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 

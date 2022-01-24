@@ -2,14 +2,20 @@ package edu.birzeit.projectpart1.ui.search;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EdgeEffect;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -33,6 +39,8 @@ public class SearchFragment extends Fragment {
     CheckBox garden;
     CheckBox balcony;
     ImageButton btn_search;
+    String balcony_status="false",garden_status="false";
+    String ContentSpinerStatus="";
 
 
 
@@ -84,9 +92,12 @@ public class SearchFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_search, container, false);
     }
 
+
+
+
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onResume() {
+        super.onResume();
         city=getActivity().findViewById(R.id.search_city);
         min_area=getActivity().findViewById(R.id.search_min_area);
         max_area=getActivity().findViewById(R.id.search_max_area);
@@ -98,8 +109,94 @@ public class SearchFragment extends Fragment {
         balcony=getActivity().findViewById(R.id.search_balcony);
         btn_search=getActivity().findViewById(R.id.search_picture_button);
 
+        balcony.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                balcony_status=String.valueOf(b);
+                Log.i("qeury","this is balcony  "+balcony_status);
 
 
+            }
+        });
+        garden.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                garden_status=String.valueOf(b);
+                Log.i("qeury","this is garden "+garden_status);
+
+
+            }
+        });
+
+        status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ContentSpinerStatus = adapterView.getItemAtPosition(i).toString();
+
+            }
+
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+
+
+        NavController navController= Navigation.findNavController(getView());
+        btn_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SearchFragmentDirections.ActionNavSearchToListFragment action= SearchFragmentDirections.actionNavSearchToListFragment();
+                action.setBalcony(balcony_status);
+                action.setGarden(garden_status);
+                if(min_area.getText().toString().isEmpty()){
+                    action.setMinArea("");
+                }
+                else{
+                    action.setMinArea(min_area.getText().toString());
+                }
+
+                if(max_area.getText().toString().isEmpty()){
+                    action.setMaxArea("");
+                }
+                else{
+                    action.setMaxArea(max_area.getText().toString());
+                }
+                if(min_bedroom.getText().toString().isEmpty()){
+                    action.setMinBedroom("");
+                }
+                else{
+                    action.setMinBedroom(min_bedroom.getText().toString());
+                }
+                if(max_bedroom.getText().toString().isEmpty()){
+                    action.setMaxBedroom("");
+                }
+                else{
+                    action.setMaxBedroom(max_bedroom.getText().toString());
+                }
+                if(price.getText().toString().isEmpty()){
+                    action.setPrice("");
+                }
+                else{
+                    action.setPrice(price.getText().toString());
+                }
+                if(city.getText().toString().isEmpty()){
+                    action.setCityname("");
+                }
+                else{
+                    action.setCityname(city.getText().toString());
+                }
+
+
+
+
+
+                action.setStatus(ContentSpinerStatus);
+                navController.navigate(action);
+            }
+        });
 
     }
 }

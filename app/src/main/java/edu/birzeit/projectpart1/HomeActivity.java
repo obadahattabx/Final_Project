@@ -1,12 +1,15 @@
 package edu.birzeit.projectpart1;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,10 +19,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import edu.birzeit.projectpart1.databinding.ActivityHomeBinding;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeBinding binding;
+    MenuItem logut;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,18 +41,36 @@ public class HomeActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_postproperty, R.id.nav_slideshow,R.id.nav_search,R.id.nav_profile_agency,R.id.nav_profile_tenent)
+                R.id.nav_home, R.id.nav_postproperty, R.id.nav_slideshow,R.id.nav_search,R.id.nav_profile_agency,R.id.nav_profile_tenent,R.id.nav_edit,R.id.logut_frag)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+
+        navigationView.getMenu().findItem(R.id.nav_historyTenant).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_historyAgency).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_profile_tenent).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_profile_agency).setVisible(true);
+        if (MainActivity.type_user == "TENANT") {
+            navigationView.getMenu().findItem(R.id.nav_historyAgency).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_profile_agency).setVisible(false);
+        }
+        else{
+            navigationView.getMenu().findItem(R.id.nav_historyTenant).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_profile_tenent).setVisible(false);
+        }
+
+
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -61,5 +84,16 @@ public class HomeActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logut_frag:
+                Intent intent=new Intent(HomeActivity.this,Login.class);
+                startActivity(intent);
+                break;
+        }
+        return false;
     }
 }

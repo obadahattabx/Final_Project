@@ -4,10 +4,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
+import edu.birzeit.projectpart1.DataBaseHelper;
 import edu.birzeit.projectpart1.R;
+import edu.birzeit.projectpart1.UserRentingAgency;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,6 +19,13 @@ import edu.birzeit.projectpart1.R;
  * create an instance of this fragment.
  */
 public class ProfileAgencyFragment extends Fragment {
+    EditText name;
+    EditText email;
+    EditText password;
+    EditText country;
+    EditText city;
+    EditText phone;
+    Button update;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -61,5 +72,45 @@ public class ProfileAgencyFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile_agency, container, false);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        name=getActivity().findViewById(R.id.agencyname_profile);
+        email=getActivity().findViewById(R.id.email_profile);
+        password=getActivity().findViewById(R.id.password_profile);
+        country=getActivity().findViewById(R.id.country_profile);
+        city=getActivity().findViewById(R.id.city_profile);
+        phone=getActivity().findViewById(R.id.phone_profile);
+        update=getActivity().findViewById(R.id.submit_profile);
+        DataBaseHelper dataBaseHelper =new
+                DataBaseHelper(getActivity(),"home5.db",null,1);
+        UserRentingAgency ua=dataBaseHelper.getProfile_Agency();
+        name.setText(ua.getName());
+        email.setText(ua.getEmail());
+        password.setText(ua.getPassword());
+        country.setText(ua.getCountry());
+        city.setText(ua.getCity());
+        phone.setText(ua.getPhoneNumber());
+        setVisble_AllEdit(false);
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            }
+        });
+
+
+
+    }
+    public void setVisble_AllEdit(boolean state){
+        name.setEnabled(state);
+        email.setEnabled(state);
+        password.setEnabled(state);
+        country.setEnabled(state);
+        city.setEnabled(state);
+        phone.setEnabled(state);
     }
 }

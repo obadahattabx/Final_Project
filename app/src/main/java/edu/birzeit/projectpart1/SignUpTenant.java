@@ -55,7 +55,7 @@ public class SignUpTenant extends AppCompatActivity {
         spGender=findViewById(R.id.gender);
 
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(SignUpTenant.this,"Home4.db",null,1);
+                DataBaseHelper(SignUpTenant.this,"home5.db",null,1);
 
         Map<String,String> mp=new HashMap<String,String>();
         mp.put("palestine","970");

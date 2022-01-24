@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
         email=findViewById(R.id.email_login);
         password=findViewById(R.id.password_login);
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(Login.this,"home4.db",null,1);
+                DataBaseHelper(Login.this,"home5.db",null,1);
 
      // dataBaseHelper.addUser("obada@hotmail","12312");
 
@@ -60,32 +60,31 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Login.this,HomeActivity.class);
-                startActivity(intent);
-//
-//                if(remember.isChecked()){
-//                    editor.putString("email",email.getText().toString());
-//                    editor.putString("password",password.getText().toString());
-//                    editor.putBoolean("checkremember",remember.isChecked());
-//                    editor.apply();
-//                }
-//                else{
-//                    editor.clear().apply();
-//                }
-//
-//                if(dataBaseHelper.checkusernamepassword(email.getText().toString(),password.getText().toString())){
-//                    Intent intent=new Intent(Login.this,HomeActivity.class);
-//                    startActivity(intent);
-//                }
-//                else{
-//                    email.setError("");
-//                    password.setError("");
-//                    System.out.println(email.getText().toString()+password.getText().toString());
-//                    String s=email.getText().toString();
-//                    System.out.println(s.charAt(0));
-//                    Toast toast =Toast.makeText(Login.this,"Faild Login",Toast.LENGTH_SHORT);
-//                    toast.show();
-//                }
+//                Intent intent=new Intent(Login.this,HomeActivity.class);
+//                startActivity(intent);
+
+                if(remember.isChecked()){
+                    editor.putString("email",email.getText().toString());
+                    editor.putString("password",password.getText().toString());
+                    editor.putBoolean("checkremember",remember.isChecked());
+                    editor.apply();
+                }
+                else{
+                    editor.clear().apply();
+                }
+
+                if(dataBaseHelper.checkusernamepassword(email.getText().toString(),password.getText().toString())){
+                    Intent intent=new Intent(Login.this,HomeActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    email.setError("");
+                    password.setError("");
+                    System.out.println(email.getText().toString()+password.getText().toString());
+                    String s=email.getText().toString();
+                    Toast toast =Toast.makeText(Login.this,"Faild Login",Toast.LENGTH_SHORT);
+                    toast.show();
+                }
             }
         });
 
