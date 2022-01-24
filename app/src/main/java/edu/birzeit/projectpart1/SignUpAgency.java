@@ -44,7 +44,7 @@ public class SignUpAgency extends AppCompatActivity {
         password=(EditText)findViewById(R.id.password_signup);
         conf_password=(EditText)findViewById(R.id.confirmpassword);
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(SignUpAgency.this,"Home4.db",null,1);
+                DataBaseHelper(SignUpAgency.this,"home5.db",null,1);
         //dataBaseHelper.addUser("obada@hotmail","sw2");
         Map<String,String> mp=new HashMap<String,String>();
         mp.put("palestine","970");

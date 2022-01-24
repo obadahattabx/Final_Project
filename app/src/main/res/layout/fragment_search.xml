@@ -10,18 +10,14 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@drawable/water1"
-
-        >
-
+        android:background="@drawable/water1">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <TextView
@@ -255,7 +251,8 @@
                     android:layout_width="203dp"
                     android:layout_height="50dp"
                     android:layout_marginLeft="52dp"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:entries="@array/status" />
             </LinearLayout>
 
             <Space
@@ -293,7 +290,7 @@
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="15dp" />
+                android:layout_height="91dp" />
 
             <ImageButton
                 android:id="@+id/search_picture_button"
@@ -307,7 +304,6 @@
                 android:textAlignment="center" />
 
         </LinearLayout>
-
-    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

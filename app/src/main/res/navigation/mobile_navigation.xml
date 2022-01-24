@@ -37,7 +37,11 @@
     <fragment
         android:id="@+id/nav_postproperty"
         android:name="edu.birzeit.projectpart1.ui.Postproperty.PostFragment"
-        android:label="@string/menu_postproperty" />
+        android:label="@string/menu_postproperty" >
+        <action
+            android:id="@+id/action_nav_postproperty_to_nav_edit"
+            app:destination="@id/nav_edit" />
+    </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="edu.birzeit.projectpart1.ui.details.DetailFragment"
@@ -48,7 +52,11 @@
         android:id="@+id/nav_search"
         android:name="edu.birzeit.projectpart1.ui.search.SearchFragment"
         android:label="Property Searching"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_nav_search_to_listFragment"
+            app:destination="@id/listFragment" />
+    </fragment>
 
         android:id="@+id/nav_profile_agency"
         android:name="edu.birzeit.projectpart1.ui.ProfileAgency.ProfileAgencyFragment"
@@ -64,5 +72,73 @@
         android:name="edu.birzeit.projectpart1.ui.ProfileAgency.ProfileAgencyFragment"
         android:label="fragment_profile_agency"
         tools:layout="@layout/fragment_profile_agency" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="edu.birzeit.projectpart1.ui.ListPoprty.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <argument
+            android:name="cityname"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="min_area"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="max_area"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="min_bedroom"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="max_bedroom"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="price"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="status"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="garden"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="balcony"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_edit"
+        android:name="edu.birzeit.projectpart1.ui.EditListProprty.EditListFragment"
+        android:label="Edit of list Property"
+        tools:layout="@layout/fragment_edit_list" >
+        <action
+            android:id="@+id/action_nav_edit_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <activity
+        android:id="@+id/login2"
+        android:name="edu.birzeit.projectpart1.Login"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/logut_frag"
+        android:name="edu.birzeit.projectpart1.ui.logut.LogoutFragment"
+        android:label="fragment_logout2"
+        tools:layout="@layout/fragment_logout2" >
+        <action
+            android:id="@+id/action_logoutFragment2_to_login2"
+            app:destination="@id/login2" />
+    </fragment>
 
 </navigation>
