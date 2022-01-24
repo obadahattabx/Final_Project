@@ -97,7 +97,7 @@ public class SearchFragment extends Fragment {
         garden=getActivity().findViewById(R.id.search_garden);
         balcony=getActivity().findViewById(R.id.search_balcony);
         btn_search=getActivity().findViewById(R.id.search_picture_button);
-
+        //خلاشيش
 
 
 
