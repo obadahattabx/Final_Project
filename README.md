@@ -116,4 +116,21 @@ edit their profiles.
 i. (5 points) Logout: which allows both types of users (the tenants and the renting agencies) to log out
 from the system and redirected to the sign in page.
 
+# 
+
+![](Image/ParAnimation.PNG)   ![](Image/Start.PNG) 
+
+
+![](Image/loginpage.PNG) 
+
+
+![](Image/home.PNG)   ![](Image/menu.PNG) 
+
+![](Image/post.PNG)   ![](Image/search.PNG) 
+
+![](Image/profile.PNG)  
+
+
+
+
 
