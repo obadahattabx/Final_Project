@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:background="#F8F7F5"
+    android:backgroundTint="#F6F5F4">
 
     <ImageView
         android:id="@+id/imageView"
@@ -13,7 +14,7 @@
         android:src="@drawable/ic_baseline_add_business_24" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_weight="1"
         android:orientation="vertical"
@@ -23,50 +24,44 @@
             android:id="@+id/view_city"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="name" />
 
         <TextView
             android:id="@+id/view_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:text="12345" />
 
         <TextView
             android:id="@+id/view_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="" />
+            android:text="=" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="@integer/material_motion_duration_long_1"
-            android:orientation="vertical"
-            android:padding="10dp"><![CDATA[
-            >
+        <Button
+            android:id="@+id/button_accept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#B50D0D"
+            android:text="Accept" />
 
-            ]]>
-
-            <TextView
-                android:id="@+id/view_firstname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/view_lastname"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/button_reject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="reject" />
     </LinearLayout>
+
 </LinearLayout>

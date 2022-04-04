@@ -119,6 +119,17 @@
                         android:textStyle="bold"/>
 
                     <TextView
+                        android:id="@+id/tv12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:height="0dp"
+                        android:text="Country"
+                        android:textColor="#353b48"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/tv6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -163,17 +174,6 @@
                         android:textStyle="bold"/>
 
                     <TextView
-                        android:id="@+id/tv10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:height="0dp"
-                        android:text="CurentCountry"
-                        android:textColor="#353b48"
-                        android:textSize="18sp"
-                        android:textStyle="bold"/>
-
-                    <TextView
                         android:id="@+id/tv11"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -194,11 +194,11 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:id="@+id/firstname_profile"
+                        android:id="@+id/firstname_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="First Name"
+                        android:hint="First Name"
                         android:paddingLeft="6dp"
                         android:textColor="#353b48"
                         android:textSize="18sp" />
@@ -208,11 +208,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/lastname_profile"
+                        android:id="@+id/lastname_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Last Name"
+                        android:hint="Last Name"
                         android:paddingLeft="6dp"
                         android:textColor="#353b48"
                         android:textSize="18sp" />
@@ -222,11 +222,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/email_profile"
+                        android:id="@+id/email_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Email"
+                        android:hint="Email"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -237,11 +237,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/password_profile"
+                        android:id="@+id/password_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Password"
+                        android:hint="Password"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -252,11 +252,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/gender_profile"
+                        android:id="@+id/gender_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Gender"
+                        android:hint="Gender"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -267,11 +267,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/city_profile"
+                        android:id="@+id/city_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="City"
+                        android:hint="City"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -282,11 +282,25 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/phone_profile"
+                        android:id="@+id/country_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="PhoneNumber"
+                        android:hint="country"
+                        android:paddingLeft="6dp"
+                        android:textColor="#353b48"
+                        android:textSize="18sp" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="4dp" />
+
+                    <EditText
+                        android:id="@+id/phone_profileTen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/design_edittext"
+                        android:hint="PhoneNumber"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -297,11 +311,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/nationality_profile"
+                        android:id="@+id/nationality_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Nationality"
+                        android:hint="Nationality"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -312,11 +326,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/salary_profile"
+                        android:id="@+id/salary_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Salary"
+                        android:hint="Salary"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -327,11 +341,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/occupation_profile"
+                        android:id="@+id/occupation_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="Occupation"
+                        android:hint="Occupation"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -342,26 +356,11 @@
                         android:layout_height="4dp" />
 
                     <EditText
-                        android:id="@+id/currentcountry_profile"
+                        android:id="@+id/familysize_profileTen"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/design_edittext"
-                        android:text="CurrentCountry"
-                        android:textColor="#353b48"
-                        android:textSize="18sp"
-                        android:paddingLeft="6dp"
-                        />
-
-                    <Space
-                        android:layout_width="match_parent"
-                        android:layout_height="4dp" />
-
-                    <EditText
-                        android:id="@+id/familysize_profile"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/design_edittext"
-                        android:text="FamilySize"
+                        android:hint="FamilySize"
                         android:textColor="#353b48"
                         android:textSize="18sp"
                         android:paddingLeft="6dp"
@@ -374,15 +373,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="15dp" />
 
-            <Button
-                android:id="@+id/submit_profile"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20sp"
-                android:backgroundTint="#B9454343"
-                android:paddingVertical="20sp"
-                android:text="UPDATE"
-                android:textColor="#F5F6FA" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/detailN_Accept"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20sp"
+                    android:backgroundTint="#B9454343"
+                    android:paddingVertical="20sp"
+                    android:text="Edit"
+                    android:textColor="#F5F6FA"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/detialN_Reject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20sp"
+                    android:backgroundTint="#B9454343"
+                    android:paddingVertical="20sp"
+                    android:text="Confirm"
+                    android:textColor="#F5F6FA"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    />
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

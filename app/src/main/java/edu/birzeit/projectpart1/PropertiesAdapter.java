@@ -20,11 +20,19 @@ import java.util.List;
 public class PropertiesAdapter extends ArrayAdapter<Properties> {
     Context context;
     int resource;
+    String Type;
+    DataBaseHelper dataBaseHelper;
 
-    public PropertiesAdapter(@NonNull Context context, int resource, @NonNull List<Properties> objects) {
+
+
+
+
+    public PropertiesAdapter(@NonNull Context context, int resource, @NonNull List<Properties> objects,String Type) {
         super(context, resource, objects);
         this.context=context;
         this.resource=resource;
+        this.Type=Type;
+
     }
 
     @NonNull
@@ -32,14 +40,41 @@ public class PropertiesAdapter extends ArrayAdapter<Properties> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
         convertView= LayoutInflater.from(context).inflate(resource,parent,false);
-        TextView area=convertView.findViewById(R.id.view_surfaceArea);
-        TextView price=convertView.findViewById(R.id.view_price);
+        TextView city=convertView.findViewById(R.id.view_city);
+        TextView address=convertView.findViewById(R.id.view_address);
         TextView date=convertView.findViewById(R.id.view_date);
+        TextView firstname=convertView.findViewById(R.id.view_firstname);
+        TextView lastname =convertView.findViewById(R.id.view_lastname);
         ImageView imageView=convertView.findViewById(R.id.imageView);
+
+
+
+
         Properties current=getItem(position);
-        area.setText(current.getSurfaceArea());
-        price.setText(current.getPrice());
-        date.setText(current.getAvailabilDate());
+
+        city.setText("City: "+current.getCityName());
+        address.setText("Postal Address: "+current.getAddress());
+        firstname.setText("");
+        lastname.setText("");
+        if(Type.equals("AGANCY")){
+            date.setText("Rented perio: "+current.getCreatDate());
+
+            UserTenant ut =MainActivity.dataBaseHelper.getProfile_Tenant(current.getID_tenant());
+            firstname.setText("First name tenant: "+ut.getFirstName());
+            lastname.setText("Last name tenant: "+ut.getLastName());
+        }
+        if(Type.equals("TENANT")){
+            date.setText("Rented perio: "+current.getCreatDate());
+            UserRentingAgency ur=MainActivity.dataBaseHelper.getProfile_Agency(current.getID_agancy());
+            firstname.setText("Name agancy: "+ur.getName());
+
+        }
+        if(Type.equals("NOTIFICATION")){
+            date.setText("request for apply");
+        }
+
+
+
 
         if(current.getImage()!=null) {
             Bitmap bitmap = BitmapFactory.decodeByteArray(current.getImage(), 0, current.getImage().length);
@@ -47,5 +82,13 @@ public class PropertiesAdapter extends ArrayAdapter<Properties> {
         }
 
         return convertView;
+    }
+
+    public DataBaseHelper getDataBaseHelper(DataBaseHelper dataBaseHelper) {
+        return this.dataBaseHelper;
+    }
+
+    public void setDataBaseHelper(DataBaseHelper dataBaseHelper) {
+        this.dataBaseHelper = dataBaseHelper;
     }
 }

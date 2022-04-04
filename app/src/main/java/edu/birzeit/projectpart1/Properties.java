@@ -21,10 +21,12 @@ public class Properties implements Parcelable {
     private String description;
     private String valid;
     private byte[] image;
+    private String urlImage ;
 
     public  Properties(){
 
     }
+
 
     protected Properties(Parcel in) {
         ID = in.readInt();
@@ -47,6 +49,7 @@ public class Properties implements Parcelable {
 
     }
 
+
     public static final Creator<Properties> CREATOR = new Creator<Properties>() {
         @Override
         public Properties createFromParcel(Parcel in) {
@@ -58,6 +61,14 @@ public class Properties implements Parcelable {
             return new Properties[size];
         }
     };
+
+    public String getUrlImage() {
+        return urlImage;
+    }
+
+    public void setUrlImage(String urlImage) {
+        this.urlImage = urlImage;
+    }
 
     public String getValid() {
         return valid;

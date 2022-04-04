@@ -25,6 +25,7 @@ public class ConnectionAsyncTask extends AsyncTask<String, String,
     @Override
     protected void onPostExecute(String s) {
           super.onPostExecute(s);
+          ProgresBarAnimation.proepertJson=ProprtiesJasonParser.parse(s);
 //        ((MainActivity) activity).setProgress(false);
 //        ((MainActivity) activity).setButtonText("connected");
 //        List<Student> students =

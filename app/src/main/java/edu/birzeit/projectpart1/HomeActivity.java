@@ -2,6 +2,9 @@ package edu.birzeit.projectpart1;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
@@ -24,11 +27,28 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityHomeBinding binding;
     MenuItem logut;
+    public static int c=0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataBaseHelper dataBaseHelper = new
+                DataBaseHelper(HomeActivity.this, MainActivity.nameDatabase, null, 1);
+
+//        dataBaseHelper.Update_proprtyAfterjason(ProgresBarAnimation.proepertJson.get(0),
+//                       String.valueOf(0));
+
+
+        for(int i=0;i<ProgresBarAnimation.proepertJson.size();i++){
+
+
+            if(dataBaseHelper.checkProperty_id(ProgresBarAnimation.proepertJson.get(i).getID())) {
+                System.out.println(ProgresBarAnimation.proepertJson.get(i).getID());
+                dataBaseHelper.insertjasonProperty(ProgresBarAnimation.proepertJson.get(i));
+            }
+
+        }
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -42,12 +62,13 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
             }
         });
 
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_postproperty, R.id.nav_slideshow,R.id.nav_search,R.id.nav_profile_agency,R.id.nav_profile_tenent,R.id.nav_edit,R.id.logut_frag)
+                R.id.nav_home, R.id.nav_postproperty, R.id.nav_slideshow,R.id.nav_search,R.id.nav_profile_agency,R.id.nav_profile_tenent,R.id.nav_edit,R.id.logut_frag,R.id.nav_notifiction,R.id.nav_historyAgency,R.id.historyList_tenant)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_home);
@@ -59,9 +80,27 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
         navigationView.getMenu().findItem(R.id.nav_historyAgency).setVisible(true);
         navigationView.getMenu().findItem(R.id.nav_profile_tenent).setVisible(true);
         navigationView.getMenu().findItem(R.id.nav_profile_agency).setVisible(true);
-        if (MainActivity.type_user == "TENANT") {
+        navigationView.getMenu().findItem(R.id.nav_postproperty).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_edit).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_search).setVisible(true);
+        navigationView.getMenu().findItem(R.id.nav_notifiction).setVisible(true);
+
+
+        if (MainActivity.type_user.equals("TENANT") ) {
             navigationView.getMenu().findItem(R.id.nav_historyAgency).setVisible(false);
             navigationView.getMenu().findItem(R.id.nav_profile_agency).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_postproperty).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_edit).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_notifiction).setVisible(false);
+        }
+        else if(MainActivity.type_user.equals("GEST")){
+            navigationView.getMenu().findItem(R.id.nav_historyTenant).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_profile_tenent).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_historyAgency).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_profile_agency).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_postproperty).setVisible(false);
+            navigationView.getMenu().findItem(R.id.nav_edit).setVisible(false);
+
         }
         else{
             navigationView.getMenu().findItem(R.id.nav_historyTenant).setVisible(false);
@@ -87,12 +126,36 @@ public class HomeActivity extends AppCompatActivity  implements NavigationView.O
     }
 
     @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_logut:
+                try {
+                    Intent intent=new Intent(HomeActivity.this,Login.class);
+                    intent.cloneFilter();
+                    startActivity(intent);
+
+                }catch (Exception e){
+
+                }
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.logut_frag:
-                Intent intent=new Intent(HomeActivity.this,Login.class);
-                startActivity(intent);
-                break;
+                try {
+                    Intent intent=new Intent(HomeActivity.this,Login.class);
+                    startActivity(intent);
+                    break;
+                }
+                catch (Exception e){
+
+                }
+
         }
         return false;
     }

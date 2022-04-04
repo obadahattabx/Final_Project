@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_design"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ui.EditListProprty.EditDetailsFragment"
+android:background="@drawable/background_design"
     >
 
-    <!-- TODO: Update blank fragment layout -->
+<!-- TODO: Update blank fragment layout -->
 
-    <ScrollView
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/water1"
+    >
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -36,7 +39,7 @@
                     android:orientation="vertical">
 
                     <ImageView
-                        android:id="@+id/detail_image"
+                        android:id="@+id/edit_image"
                         android:layout_width="match_parent"
                         android:layout_height="224dp"
                         app:srcCompat="@drawable/addpicture" />
@@ -58,12 +61,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:text="City Name"
+                        android:text="City"
                         android:textColor="@color/white"
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/detail_city"
+                        android:id="@+id/edit_city"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -71,15 +74,13 @@
                         android:drawableStart="@drawable/ic_cityname"
                         android:drawablePadding="8dp"
                         android:ems="10"
-                        android:enabled="false"
                         android:hint=" city name "
                         android:inputType="textPersonName"
-
-
                         android:paddingStart="8dp"
                         android:textColor="@color/black"
-                        android:visibility="visible"
-                        tools:visibility="visible" />
+
+
+                        />
                 </LinearLayout>
 
                 <LinearLayout
@@ -97,7 +98,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/detail_address"
+                        android:id="@+id/edit_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -109,8 +110,6 @@
                         android:inputType="textPersonName"
                         android:paddingStart="8dp"
                         android:textColor="@color/black"
-                        android:enabled="false"
-
 
                         />
                 </LinearLayout>
@@ -141,7 +140,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/detail_area"
+                        android:id="@+id/edit_area"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -153,8 +152,6 @@
                         android:inputType="textPersonName"
                         android:paddingStart="8dp"
                         android:textColor="@color/black"
-                        android:enabled="false"
-
 
                         />
 
@@ -175,7 +172,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/detail_year"
+                        android:id="@+id/edit_year"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -187,8 +184,6 @@
                         android:inputType="textPersonName"
                         android:paddingStart="8dp"
                         android:textColor="@color/black"
-                        android:enabled="false"
-
 
                         />
 
@@ -219,7 +214,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/detail_bedroom"
+                        android:id="@+id/edit_bedroom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -231,8 +226,6 @@
                         android:inputType="textPersonName"
                         android:paddingStart="8dp"
                         android:textColor="@color/black"
-                        android:enabled="false"
-
 
                         />
 
@@ -253,7 +246,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/detail_price"
+                        android:id="@+id/edit_price"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -264,8 +257,6 @@
                         android:hint="Price"
                         android:inputType="textPersonName"
                         android:paddingStart="8dp"
-                        android:enabled="false"
-
                         android:textColor="@color/black" />
                 </LinearLayout>
 
@@ -295,15 +286,12 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/detail_date"
+                        android:id="@+id/edit_ate"
                         android:layout_width="match_parent"
                         android:layout_height="61dp"
                         android:ems="10"
                         android:inputType="date"
-                        android:textAlignment="center"
-                        android:textColor="@color/white"
-                        android:enabled="false"
-                        />
+                        android:textColor="@color/white"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -322,14 +310,11 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:id="@+id/detail_status"
+                        android:id="@+id/edit_status"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:textAlignment="center"
                         android:textColor="@color/white"
-                        android:enabled="false"
-
 
 
                         />
@@ -352,25 +337,47 @@
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/detail_discription"
+                android:id="@+id/edit_discription"
                 android:layout_width="match_parent"
-                android:layout_height="176dp"
+                android:layout_height="123dp"
                 android:background="@drawable/design_edittext"
                 android:ems="10"
-                android:enabled="false"
                 android:gravity="start|top"
                 android:inputType="textMultiLine"
-                android:scrollbars="vertical"
-
 
                 />
 
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="10dp">
-
+            <Space android:layout_height="10dp"
+                android:layout_width="wrap_content">
 
             </Space>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Edit_editF"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/button_design"
+                    android:text="Edit" />
+
+                <Button
+                    android:id="@+id/delet_editF"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="171dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/button_design"
+                    android:text="Delete" />
+
+            </LinearLayout>
 
             <Space
                 android:layout_width="wrap_content"
@@ -379,23 +386,23 @@
 
             </Space>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/details_appy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Apply"
-                    />
-            </LinearLayout>
-
+            <Button
+                android:id="@+id/confirm_editF"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_design"
+                android:text="Confirm"
+                android:enabled="false"/>
 
 
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
+</ScrollView>
 
 
 </FrameLayout>

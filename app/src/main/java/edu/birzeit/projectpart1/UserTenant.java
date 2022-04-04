@@ -1,6 +1,9 @@
 package edu.birzeit.projectpart1;
 
-public class UserTenant extends User {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class UserTenant extends User implements Parcelable {
     private String FirstName;
     private String LastName;
     private String gender;
@@ -29,6 +32,31 @@ public class UserTenant extends User {
         this.city = city;
         this.phoneNumber = phoneNumber;
     }
+
+    protected UserTenant(Parcel in) {
+        FirstName = in.readString();
+        LastName = in.readString();
+        gender = in.readString();
+        nationality = in.readString();
+        Salary = in.readString();
+        occuptaion = in.readString();
+        familySize = in.readString();
+        country = in.readString();
+        city = in.readString();
+        phoneNumber = in.readString();
+    }
+
+    public static final Creator<UserTenant> CREATOR = new Creator<UserTenant>() {
+        @Override
+        public UserTenant createFromParcel(Parcel in) {
+            return new UserTenant(in);
+        }
+
+        @Override
+        public UserTenant[] newArray(int size) {
+            return new UserTenant[size];
+        }
+    };
 
     public String getFirstName() {
         return FirstName;
@@ -108,5 +136,24 @@ public class UserTenant extends User {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(FirstName);
+        parcel.writeString(LastName);
+        parcel.writeString(gender);
+        parcel.writeString(nationality);
+        parcel.writeString(Salary);
+        parcel.writeString(occuptaion);
+        parcel.writeString(familySize);
+        parcel.writeString(country);
+        parcel.writeString(city);
+        parcel.writeString(phoneNumber);
     }
 }

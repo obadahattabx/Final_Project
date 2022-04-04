@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_home_to_detailsFragment"
             app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_notifiction"
+            app:destination="@id/nav_notifiction" />
     </fragment>
 
     <fragment
@@ -26,13 +29,16 @@
         android:label="Details of property"
         tools:layout="@layout/fragment_details" >
         <argument
-            android:name="contentDetails"
-            app:argType="string"
-            android:defaultValue="hjk" />
+            android:name="EnableButton"
+            app:argType="boolean"
+            android:defaultValue="false" />
         <argument
             android:name="details"
             app:argType="edu.birzeit.projectpart1.Properties"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_detailsFragment_to_nav_home"
+            app:destination="@id/nav_home" />
     </fragment>
     <fragment
         android:id="@+id/nav_postproperty"
@@ -123,8 +129,8 @@
         android:label="Edit of list Property"
         tools:layout="@layout/fragment_edit_list" >
         <action
-            android:id="@+id/action_nav_edit_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
+            android:id="@+id/action_nav_edit_to_editDetailsFragment2"
+            app:destination="@id/editDetailsFragment2" />
     </fragment>
     <activity
         android:id="@+id/login2"
@@ -139,6 +145,61 @@
         <action
             android:id="@+id/action_logoutFragment2_to_login2"
             app:destination="@id/login2" />
+    </fragment>
+    <fragment
+        android:id="@+id/editDetailsFragment2"
+        android:name="edu.birzeit.projectpart1.ui.EditListProprty.EditDetailsFragment"
+        android:label="fragment_edit_details"
+        tools:layout="@layout/fragment_edit_details" >
+        <argument
+            android:name="details"
+            app:argType="edu.birzeit.projectpart1.Properties"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_editDetailsFragment2_to_nav_edit"
+            app:destination="@id/nav_edit" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_notifiction"
+        android:name="edu.birzeit.projectpart1.ui.Notification.RentalMenuFragment"
+        android:label="Notification"
+        tools:layout="@layout/fragment_notification" >
+        <action
+            android:id="@+id/action_nav_notifiction_to_detailsNotficationFragment"
+            app:destination="@id/detailsNotficationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsNotficationFragment"
+        android:name="edu.birzeit.projectpart1.ui.Notification.detailsNotficationFragment"
+        android:label="fragment_details_notfication"
+        tools:layout="@layout/fragment_details_notfication" >
+        <argument
+            android:name="ProfileTenant"
+            app:argType="edu.birzeit.projectpart1.UserTenant" />
+        <argument
+            android:name="IDApplay"
+            app:argType="edu.birzeit.projectpart1.ApplayProperty" />
+        <action
+            android:id="@+id/action_detailsNotficationFragment_to_nav_notifiction"
+            app:destination="@id/nav_notifiction" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_historyAgency"
+        android:name="edu.birzeit.projectpart1.ui.history.HistoryAgencyFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history_agency">
+        <action
+            android:id="@+id/action_historyAgencyFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_historyTenant"
+        android:name="edu.birzeit.projectpart1.ui.history.HistoryTenantFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_history_tenant">
+        <action
+            android:id="@+id/action_historyTenantFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
     </fragment>
 
 </navigation>
