@@ -1,13 +1,25 @@
 package edu.birzeit.projectpart1.ui.history;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
+import java.util.ArrayList;
+
+import edu.birzeit.projectpart1.DataBaseHelper;
+import edu.birzeit.projectpart1.MainActivity;
+import edu.birzeit.projectpart1.Properties;
+import edu.birzeit.projectpart1.PropertiesAdapter;
 import edu.birzeit.projectpart1.R;
+import edu.birzeit.projectpart1.ui.home.HomeFragmentDirections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -15,6 +27,8 @@ import edu.birzeit.projectpart1.R;
  * create an instance of this fragment.
  */
 public class HistoryTenantFragment extends Fragment {
+
+    ListView history;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -62,4 +76,43 @@ public class HistoryTenantFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_history_tenant, container, false);
     }
+
+
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        DataBaseHelper dataBaseHelper =new
+                DataBaseHelper(getActivity(), MainActivity.nameDatabase,null,1);
+
+        history=getActivity().findViewById(R.id.historyList_tenant);
+
+
+
+        // ArrayList<Properties> ap=dataBaseHelper.getProperties_Search("tulakrm","45",null,null,null,null,null,null,null);
+        ArrayList<Properties> ap=dataBaseHelper.getAllProperties_userTenant_history();
+        PropertiesAdapter pd=new PropertiesAdapter(getActivity(),R.layout.view_property,ap,"TENANT");
+        pd.getDataBaseHelper(dataBaseHelper);
+        history.setAdapter(pd);
+
+        NavController navController= Navigation.findNavController(getView());
+
+
+
+        history.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                HistoryTenantFragmentDirections.ActionHistoryTenantFragmentToDetailsFragment action =HistoryTenantFragmentDirections.actionHistoryTenantFragmentToDetailsFragment(ap.get(i));
+                action.setEnableButton(true);
+                navController.navigate(action);
+
+                Log.i("selecte","this is  "+ap.get(i).getAvailabilDate());
+
+
+            }
+        });
+
+    }
+
 }

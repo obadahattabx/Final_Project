@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,11 +31,10 @@ import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Calendar;
 
 import edu.birzeit.projectpart1.DataBaseHelper;
-import edu.birzeit.projectpart1.Login;
+import edu.birzeit.projectpart1.MainActivity;
 import edu.birzeit.projectpart1.Properties;
 import edu.birzeit.projectpart1.R;
 
@@ -126,11 +124,11 @@ public class PostFragment extends Fragment {
         date = getActivity().findViewById(R.id.post_date);
         addPicture= (ImageButton) getActivity().findViewById(R.id.post_picture_button);
         Post= getActivity().findViewById(R.id.post_button);
-        cityname=getActivity().findViewById(R.id.post_city);
+        cityname=getActivity().findViewById(R.id.edit_city);
         price=getActivity().findViewById(R.id.post_price);
-        area=getActivity().findViewById(R.id.post_area);
-        address=getActivity().findViewById(R.id.post_address);
-        constructionYear=getActivity().findViewById(R.id.post_year);
+        area=getActivity().findViewById(R.id.edit_area);
+        address=getActivity().findViewById(R.id.edit_address);
+        constructionYear=getActivity().findViewById(R.id.edit_year);
         numBedroom=getActivity().findViewById(R.id.post_bedroom);
         status=getActivity().findViewById(R.id.post_status);
         description=getActivity().findViewById(R.id.post_discription);
@@ -158,7 +156,7 @@ public class PostFragment extends Fragment {
         final int month=calendar.get(Calendar.MONTH);
         final int day =calendar.get(Calendar.DAY_OF_MONTH);
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(getActivity(),"home5.db",null,1);
+                DataBaseHelper(getActivity(), MainActivity.nameDatabase,null,1);
 
 
 

@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PROJECTpart1">
         <activity
+
+            android:name=".MainActivity"
+            android:exported="true" />
+        <activity
             android:name=".HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home"
@@ -27,7 +31,7 @@
             android:name=".Login"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ProgresBarAnimation"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

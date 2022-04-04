@@ -1,11 +1,16 @@
 package edu.birzeit.projectpart1.ui.details;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,9 +19,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import edu.birzeit.projectpart1.ApplayProperty;
+import edu.birzeit.projectpart1.DataBaseHelper;
+import edu.birzeit.projectpart1.Login;
+import edu.birzeit.projectpart1.MainActivity;
 import edu.birzeit.projectpart1.Properties;
 import edu.birzeit.projectpart1.R;
+import edu.birzeit.projectpart1.UserTenant;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -98,6 +109,16 @@ public class detailsFragment extends Fragment {
          status=getActivity().findViewById(R.id.detail_status);
          discrption=getActivity().findViewById(R.id.detail_discription);
          Apply=getActivity().findViewById(R.id.details_appy);
+
+        if (MainActivity.type_user.equals("TENANT") ||MainActivity.type_user.equals("GEST")) {
+            Apply.setVisibility(View.VISIBLE);
+        }
+        else
+            Apply.setVisibility(View.INVISIBLE);
+
+        DataBaseHelper dataBaseHelper = new
+                DataBaseHelper(getActivity(), MainActivity.nameDatabase, null, 1);
+
         if(getArguments()!=null){
             detailsFragmentArgs args=detailsFragmentArgs.fromBundle(getArguments());
             Properties p=args.getDetails();
@@ -114,6 +135,37 @@ public class detailsFragment extends Fragment {
             date.setText(p.getAvailabilDate());
             status.setText(p.getStatus());
             discrption.setText(p.getDescription());
+            NavController navController= Navigation.findNavController(getView());
+            @NonNull NavDirections action=detailsFragmentDirections.actionDetailsFragmentToNavHome();
+            if(args.getEnableButton()){
+                Apply.setVisibility(View.INVISIBLE);
+            }
+
+
+            Apply.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(MainActivity.type_user.equals("GEST")){
+
+                        Intent intent=new Intent(getActivity(), Login.class);
+                        startActivity(intent);
+                        Toast toast =Toast.makeText(getActivity(),"Please, Sign up in application"
+                                ,Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                    else {
+                        ApplayProperty ap = new ApplayProperty();
+                        ap.setId_tenant(MainActivity.id_user_login);
+                        ap.setId_property(p.getID());
+                        ap.setId_agancy(p.getID_agancy());
+                        dataBaseHelper.addUserApplayProperty(ap);
+                        dataBaseHelper.Update_SetNotifiction(String.valueOf(p.getID_agancy()), "TRUE");
+                        navController.navigate(action);
+                    }
+
+
+                }
+            });
 
 
 

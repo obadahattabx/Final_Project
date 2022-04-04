@@ -1,11 +1,6 @@
-package edu.birzeit.projectpart1.ui.EditListProprty;
+package edu.birzeit.projectpart1.ui.Notification;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,22 +8,28 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+
 import java.util.ArrayList;
 
+import edu.birzeit.projectpart1.ApplayProperty;
 import edu.birzeit.projectpart1.DataBaseHelper;
 import edu.birzeit.projectpart1.MainActivity;
 import edu.birzeit.projectpart1.Properties;
 import edu.birzeit.projectpart1.PropertiesAdapter;
 import edu.birzeit.projectpart1.R;
+import edu.birzeit.projectpart1.UserTenant;
 import edu.birzeit.projectpart1.ui.home.HomeFragmentDirections;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link EditListFragment#newInstance} factory method to
+ * Use the {@link RentalMenuFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class EditListFragment extends Fragment {
-    ListView propertylist;
+public class RentalMenuFragment extends Fragment {
+    ListView notifilist;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,7 +40,7 @@ public class EditListFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public EditListFragment() {
+    public RentalMenuFragment() {
         // Required empty public constructor
     }
 
@@ -49,11 +50,11 @@ public class EditListFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment EditListFragment.
+     * @return A new instance of fragment RentalMenuFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static EditListFragment newInstance(String param1, String param2) {
-        EditListFragment fragment = new EditListFragment();
+    public static RentalMenuFragment newInstance(String param1, String param2) {
+        RentalMenuFragment fragment = new RentalMenuFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -74,30 +75,45 @@ public class EditListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_list, container, false);
+        return inflater.inflate(R.layout.fragment_notification, container, false);
     }
+
+
     @Override
     public void onResume() {
         super.onResume();
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(getActivity(), MainActivity.nameDatabase,null,1);
-        propertylist=getActivity().findViewById(R.id.EditList_property);
+                DataBaseHelper(getActivity(),MainActivity.nameDatabase,null,1);
+        getActivity().getIntent().putExtra("type","false");
+        notifilist=getActivity().findViewById(R.id.notificationlist);
+        ArrayList<ApplayProperty> applay= dataBaseHelper.getAllApplay(MainActivity.id_user_login);
+        ArrayList<Properties> Arpo=new ArrayList<>();
+        ArrayList<UserTenant> AUT=new ArrayList<>();
+        for(int i=0;i<applay.size();i++){
+            Properties p =dataBaseHelper.getProperty_byID(applay.get(i).getId_property());
+            UserTenant ut=dataBaseHelper.getProfile_Tenant(applay.get(i).getId_tenant());
+            Arpo.add(p);
+            AUT.add(ut);
 
+        }
 
 
         // ArrayList<Properties> ap=dataBaseHelper.getProperties_Search("tulakrm","45",null,null,null,null,null,null,null);
-        ArrayList<Properties> ap=dataBaseHelper.getAllProperties_userAgancy();
-        PropertiesAdapter pd=new PropertiesAdapter(getActivity(),R.layout.view_property,ap,"NORMAL");
-        propertylist.setAdapter(pd);
+
+        PropertiesAdapter pd=new PropertiesAdapter(getActivity(),R.layout.view_property,Arpo,"NOTIFICATION");
+        notifilist.setAdapter(pd);
+
         NavController navController= Navigation.findNavController(getView());
-        propertylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+
+        notifilist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                EditListFragmentDirections.ActionNavEditToEditDetailsFragment2 action=EditListFragmentDirections.actionNavEditToEditDetailsFragment2(ap.get(i));
-
+                RentalMenuFragmentDirections.ActionNavNotifictionToDetailsNotficationFragment action=RentalMenuFragmentDirections.actionNavNotifictionToDetailsNotficationFragment(AUT.get(i),applay.get(i));
                 navController.navigate(action);
 
-                Log.i("selecte","this is  "+ap.get(i).getAvailabilDate());
+                Log.i("selecte","this is  "+Arpo.get(i).getAvailabilDate());
 
 
             }

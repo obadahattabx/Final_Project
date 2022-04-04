@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Edit_Properties_Fragment"
+    tools:context=".ui.EditListProperty.EditListFragment"
     android:background="@drawable/background_design"
     >
 
@@ -13,7 +13,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/brok2"
+        android:background="@drawable/water1"
         >
 
         <LinearLayout
@@ -28,32 +28,6 @@
                 android:orientation="vertical">
 
 
-                <TextView
-                    android:id="@+id/textView3"
-                    style="@style/Widget.Material3.MaterialTimePicker.Display.HelperText"
-                    android:layout_width="match_parent"
-                    android:layout_height="41dp"
-                    android:text="Post a property"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-
-                    />
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingLeft="8dp"
-                    android:text="Show post property"
-                    android:textColor="@color/white"
-                    android:textSize="18sp" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="5dp" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -65,7 +39,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/imageView2"
+                            android:id="@+id/edit_image"
                             android:layout_width="match_parent"
                             android:layout_height="224dp"
                             app:srcCompat="@drawable/addpicture" />
@@ -92,7 +66,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_city"
+                            android:id="@+id/edit_city"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -124,7 +98,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_address"
+                            android:id="@+id/edit_address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -166,7 +140,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_area"
+                            android:id="@+id/edit_area"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -198,7 +172,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_year"
+                            android:id="@+id/edit_year"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -240,7 +214,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_bedroom"
+                            android:id="@+id/edit_bedroom"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -272,7 +246,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_price"
+                            android:id="@+id/edit_price"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -312,11 +286,12 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_date"
+                            android:id="@+id/edit_ate"
                             android:layout_width="match_parent"
                             android:layout_height="61dp"
                             android:ems="10"
-                            android:inputType="date" />
+                            android:inputType="date"
+                            android:textColor="@color/white"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -334,11 +309,12 @@
                             android:textColor="@color/white"
                             android:textSize="16sp" />
 
-                        <Spinner
-                            android:id="@+id/post_status"
+                        <TextView
+                            android:id="@+id/edit_status"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:textColor="@color/white"
 
 
                             />
@@ -361,7 +337,7 @@
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/post_discription"
+                    android:id="@+id/edit_discription"
                     android:layout_width="match_parent"
                     android:layout_height="123dp"
                     android:background="@drawable/design_edittext"
@@ -381,7 +357,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/Edit_button"
+                        android:id="@+id/Edit_editF"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="171dp"
                         android:layout_height="wrap_content"
@@ -391,14 +367,14 @@
                         android:text="Edit" />
 
                     <Button
-                        android:id="@+id/delet_button"
+                        android:id="@+id/delet_editF"
                         style="@style/Widget.AppCompat.Button.Colored"
                         android:layout_width="171dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/button_design"
-                        android:text="Delet" />
+                        android:text="Delete" />
 
                 </LinearLayout>
 
@@ -408,6 +384,17 @@
                     android:layout_weight="1">
 
                 </Space>
+
+                <Button
+                    android:id="@+id/confirm_editF"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_design"
+                    android:text="Confirm" />
 
 
             </LinearLayout>

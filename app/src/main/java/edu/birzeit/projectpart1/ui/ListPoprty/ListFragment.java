@@ -16,6 +16,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 import edu.birzeit.projectpart1.DataBaseHelper;
+import edu.birzeit.projectpart1.MainActivity;
 import edu.birzeit.projectpart1.Properties;
 import edu.birzeit.projectpart1.PropertiesAdapter;
 import edu.birzeit.projectpart1.R;
@@ -81,7 +82,7 @@ public class ListFragment extends Fragment {
     public void onResume() {
         super.onResume();
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(getActivity(),"home5.db",null,1);
+                DataBaseHelper(getActivity(), MainActivity.nameDatabase,null,1);
         propertylist=getActivity().findViewById(R.id.List_property);
 
 
@@ -89,7 +90,10 @@ public class ListFragment extends Fragment {
          ArrayList<Properties> ap=dataBaseHelper.getProperties_Search(args.getCityname(),args.getMinArea(),args.getMaxArea(),
                  args.getMinBedroom(),args.getMaxBedroom(),args.getPrice(),args.getStatus(),args.getGarden(),args.getBalcony());
        // ArrayList<Properties> ap=dataBaseHelper.getAllProperties();
-        PropertiesAdapter pd=new PropertiesAdapter(getActivity(),R.layout.view_property,ap);
+
+        Log.i("jas",""+ap.size());
+
+        PropertiesAdapter pd=new PropertiesAdapter(getActivity(),R.layout.view_property,ap,"NORMAL");
         propertylist.setAdapter(pd);
         NavController navController= Navigation.findNavController(getView());
         propertylist.setOnItemClickListener(new AdapterView.OnItemClickListener() {

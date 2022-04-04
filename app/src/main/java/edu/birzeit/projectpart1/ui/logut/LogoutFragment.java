@@ -1,5 +1,6 @@
 package edu.birzeit.projectpart1.ui.logut;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import edu.birzeit.projectpart1.HomeActivity;
+import edu.birzeit.projectpart1.Login;
 import edu.birzeit.projectpart1.R;
 import edu.birzeit.projectpart1.ui.Postproperty.PostFragmentDirections;
 
@@ -75,8 +78,10 @@ public class LogoutFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        NavController navController= Navigation.findNavController(getView());
-        @NonNull NavDirections action= LogoutFragmentDirections.actionLogoutFragment2ToLogin2();
-        navController.navigate(action);
+//        NavController navController= Navigation.findNavController(getView());
+//        @NonNull NavDirections action= LogoutFragmentDirections.actionLogoutFragment2ToLogin2();
+//        navController.navigate(action);
+        Intent intent=new Intent(getActivity(), Login.class);
+        startActivity(intent);
     }
 }

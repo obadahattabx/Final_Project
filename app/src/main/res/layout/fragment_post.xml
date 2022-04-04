@@ -71,7 +71,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_city"
+                            android:id="@+id/edit_city"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -102,7 +102,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_address"
+                            android:id="@+id/edit_address"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -144,7 +144,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_area"
+                            android:id="@+id/edit_area"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -176,7 +176,7 @@
                             android:textSize="16sp" />
 
                         <EditText
-                            android:id="@+id/post_year"
+                            android:id="@+id/edit_year"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="5dp"
@@ -295,7 +295,7 @@
                             android:layout_height="61dp"
                             android:ems="10"
                             android:inputType="date"
-                            android:enabled="false"/>
+                            android:enabled="true"/>
 
                     </LinearLayout>
 

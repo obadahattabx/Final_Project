@@ -255,15 +255,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="36dp" />
 
-            <Button
-                android:id="@+id/submit_profile"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20sp"
-                android:backgroundTint="#B9454343"
-                android:paddingVertical="20sp"
-                android:text="UPDATE"
-                android:textColor="#F5F6FA" />
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/submit_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20sp"
+                    android:backgroundTint="#B9454343"
+                    android:paddingVertical="20sp"
+                    android:text="Edit"
+                    android:textColor="#F5F6FA"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/confirm_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20sp"
+                    android:backgroundTint="#B9454343"
+                    android:paddingVertical="20sp"
+                    android:text="Confrim"
+                    android:textColor="#F5F6FA"
+                    android:layout_weight="1"
+                    android:enabled="false"/>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

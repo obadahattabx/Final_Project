@@ -10,6 +10,7 @@ import android.widget.EditText;
 import androidx.fragment.app.Fragment;
 
 import edu.birzeit.projectpart1.DataBaseHelper;
+import edu.birzeit.projectpart1.MainActivity;
 import edu.birzeit.projectpart1.R;
 import edu.birzeit.projectpart1.UserRentingAgency;
 
@@ -26,6 +27,7 @@ public class ProfileAgencyFragment extends Fragment {
     EditText city;
     EditText phone;
     Button update;
+    Button confirm;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -84,8 +86,9 @@ public class ProfileAgencyFragment extends Fragment {
         city=getActivity().findViewById(R.id.city_profile);
         phone=getActivity().findViewById(R.id.phone_profile);
         update=getActivity().findViewById(R.id.submit_profile);
+        confirm=getActivity().findViewById(R.id.confirm_profile);
         DataBaseHelper dataBaseHelper =new
-                DataBaseHelper(getActivity(),"home5.db",null,1);
+                DataBaseHelper(getActivity(), MainActivity.nameDatabase,null,1);
         UserRentingAgency ua=dataBaseHelper.getProfile_Agency();
         name.setText(ua.getName());
         email.setText(ua.getEmail());
@@ -97,10 +100,33 @@ public class ProfileAgencyFragment extends Fragment {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                setVisble_AllEdit(true);
+                confirm.setEnabled(true);
+
+
 
 
             }
         });
+        confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setVisble_AllEdit(false);
+                confirm.setEnabled(false);
+                UserRentingAgency ua=new UserRentingAgency();
+                ua.setEmail(email.getText().toString());
+                ua.setName(name.getText().toString());
+                ua.setPassword(password.getText().toString());
+                ua.setCity(city.getText().toString());
+                ua.setCountry(country.getText().toString());
+                ua.setPhoneNumber(phone.getText().toString());
+                dataBaseHelper.Update_Ageny(ua);
+
+
+
+            }
+        });
+
 
 
 
