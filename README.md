@@ -9,7 +9,7 @@ and the tenants.
 The application should include the following functionalities:
 
 
-# 1. (10 points) Introduction layout
+# 1.  Introduction layout
 This layout has a “connect” button, which will connect to a server using REST and load the added properties
 in an array-list.
 a. If connection successful → go-to sing in and sign up page which contains the search icon at the bottom 
@@ -21,7 +21,7 @@ then the App redirects him or her to the sign-up/sign-in page
 
 
 
-# 2. (30 points) Signup, Sign in, and Logout
+# 2.  Signup, Sign in, and Logout
 This layout should have a “Sign in” and “Sign Up” buttons.
 a. (10 points) In the main page (first page), the user can enter his or her e-mail and password that are 
 registered in the database to sign in into a special menu depending on the user type, i.e., a renting 
@@ -67,7 +67,7 @@ If all required fields in each sign up form are filled with valid data, then and
 registered. Otherwise, an error message is displayed, and the missing or invalid fields are colored in red.
 
 
-# 3. (80 points) Home layout (sign in as normal user) 
+# 3.  Home layout (sign in as normal user) 
 
 This layout should be a Navigation Drawer Activity which will contain the most up-to-five recent 
 properties posted. The navigation bar should have the following functionality:
