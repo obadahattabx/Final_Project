@@ -23,12 +23,12 @@ then the App redirects him or her to the sign-up/sign-in page
 
 # 2.  Signup, Sign in, and Logout
 This layout should have a “Sign in” and “Sign Up” buttons.
-a. (10 points) In the main page (first page), the user can enter his or her e-mail and password that are 
+a.  In the main page (first page), the user can enter his or her e-mail and password that are 
 registered in the database to sign in into a special menu depending on the user type, i.e., a renting 
 agency or a tenant. This layout must have a check box called “remember me” which will save the 
 email in shared preferences, so next time the user logins, he or she does not need to re-type the 
 email address. 
-b. (20 points)The Sign-Up button redirects the user to another layout, where he or she determines the 
+b. The Sign-Up button redirects the user to another layout, where he or she determines the 
 user type by clicking one of the following two buttons. Then, a sign up form is displayed according 
 to the user type
 
@@ -72,30 +72,30 @@ registered. Otherwise, an error message is displayed, and the missing or invalid
 This layout should be a Navigation Drawer Activity which will contain the most up-to-five recent 
 properties posted. The navigation bar should have the following functionality:
 
-a. (10 points) Home: displays the most up-to-five recent properties posted (main page).
+a.  Home: displays the most up-to-five recent properties posted (main page).
 
-b. (15 points) Property search: which allows the tenant to search for a certain property using the following 
+b.  Property search: which allows the tenant to search for a certain property using the following 
 search criteria and wishes: city, minimum surface area, maximum surface area, minimum number of 
 bedrooms, maximum number of bedrooms, minimum number of rental price, status (furnished and 
 unfurnished), has a balcony (checkbox), has a garden (checkbox). In other words, the user fills the 
 property search form with the fields mentioned above.
 
-c. (10 points) Post a property, which allows the renting agency to post a new property with the following 
+c.  Post a property, which allows the renting agency to post a new property with the following 
 information: city, postal address, surface area, construction year, number of bedrooms, rental price, 
 status, furnished or unfurnished, photos, availability date, and the property description (up 20 200 
 words). Each post will be valid until the property is rented. If it is not rented within 90 days, the post 
 disappears automatically.
 
-d. (10 points) Edit the list of properties: the renting agency should be able to view its list of posted 
+d.  Edit the list of properties: the renting agency should be able to view its list of posted 
 properties. Each item in the list has a view button to view the property details. After the property 
 information is displayed, there are two buttons, namely, edit and delete at the bottom to allow the user 
 to edit or to delete this property.
 
-e. (5 points) Rental history of the tenant, which lists all properties that the tenant has rented through this 
+e.  Rental history of the tenant, which lists all properties that the tenant has rented through this 
 application. In this list, it shows the city and the postal address of the property, the renting period, and 
 the renting agency name.
 
-f. (5 points) Rental history of the renting agency, which lists all properties that renting agency has rented 
+f.  Rental history of the renting agency, which lists all properties that renting agency has rented 
 through this application. In this list, it shows the city and the postal address of the property, the renting 
 period, and the tenant first and last names.
 
@@ -110,10 +110,10 @@ each rental application, the renting agency can click either an “Approve” or
 to this application. After that, the tenant will receive a notification. The decision on the renting application 
 is reflected on the database.
 
-h. (5 points) Profile, which allows both types of users (the tenants and the renting agencies) to view and 
+h.  Profile, which allows both types of users (the tenants and the renting agencies) to view and 
 edit their profiles.
 
-i. (5 points) Logout: which allows both types of users (the tenants and the renting agencies) to log out
+i.  Logout: which allows both types of users (the tenants and the renting agencies) to log out
 from the system and redirected to the sign in page.
 
 # 
